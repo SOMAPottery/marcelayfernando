@@ -1,0 +1,488 @@
+/* ==========================================================================
+   DESKTOP  (>= 1024px)
+   The editorial redesign. Mobile rules in base.css / components.css /
+   sections.css are left untouched — everything here is additive or
+   overriding at this breakpoint only. Organized by component/section so a
+   future "desktop only" request can be resolved by editing one block here.
+   ========================================================================== */
+
+@media (min-width: 1024px) {
+
+  /* ---- Layout ---- */
+  .container {
+    max-width: var(--width-editorial);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--page-gutter-desktop);
+    padding-right: var(--page-gutter-desktop);
+  }
+
+  .page-section {
+    padding-top: var(--section-space-desktop);
+    padding-bottom: var(--section-space-desktop);
+  }
+
+  .page-section--tight {
+    padding-top: var(--space-xl);
+    padding-bottom: var(--space-xl);
+  }
+
+  .divider {
+    margin-top: var(--space-before-divider);
+    margin-bottom: var(--space-after-divider);
+  }
+
+  /* ---- Typography scale ---- */
+  .section-title {
+    font-size: clamp(3rem, 4vw, 4rem);
+  }
+
+  .eyebrow {
+    font-size: 1.5rem;
+  }
+
+  .section-subtitle {
+    font-size: 1.3rem;
+  }
+
+  .body-text {
+    font-size: 1.05rem;
+    line-height: 1.85;
+  }
+
+  .measure-copy {
+    max-width: var(--width-copy);
+  }
+
+  /* ---- Header: horizontal editorial nav ---- */
+  .site-header {
+    height: var(--header-height-desktop);
+    padding: 0 var(--page-gutter-desktop);
+  }
+
+  .site-header__mark img {
+    height: 46px;
+  }
+
+  .site-header__toggle {
+    display: none;
+  }
+
+  .site-nav-overlay,
+  .site-nav {
+    display: none;
+  }
+
+  .site-header__nav {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xl);
+  }
+
+  .site-header__nav-list {
+    display: flex;
+    align-items: center;
+    gap: var(--space-lg);
+  }
+
+  .site-header__nav-list a {
+    font-family: var(--font-body);
+    font-size: 0.78rem;
+    letter-spacing: var(--tracking-wider);
+    text-transform: uppercase;
+    color: var(--color-chocolate-soft);
+    padding-bottom: 4px;
+    border-bottom: 1px solid transparent;
+    transition: color var(--transition-base), border-color var(--transition-base);
+  }
+
+  .site-header__nav-list a:hover,
+  .site-header__nav-list a:focus-visible,
+  .site-header__nav-list a[aria-current="page"] {
+    color: var(--color-burgundy);
+    border-bottom-color: var(--color-burgundy);
+  }
+
+  .site-header__rsvp {
+    padding: 0.7rem 1.5rem;
+    font-size: 0.72rem;
+  }
+
+  /* ---- Footer ---- */
+  .site-footer {
+    padding: var(--space-xl) var(--page-gutter-desktop) var(--space-2xl);
+  }
+
+  /* ---- Home hero: quiet, centered, generously proportioned ----
+     The mobile hero uses one full-bleed photo with the plaque baked in —
+     faithful to the approved design at a tall, narrow aspect ratio. At
+     wide desktop ratios that same cover-crop zooms in so far the plaque
+     collides with the overlaid text, so desktop instead pairs a warm
+     solid backdrop (sampled from the same wall) with the plaque presented
+     as its own contained, tightly-cropped image. Same artwork, same
+     identity — just composed so it never fights for space. */
+  .home-hero {
+    padding: var(--space-2xl) var(--page-gutter-desktop) var(--space-2xl);
+    background: radial-gradient(120% 100% at 50% 8%, #cf6636 0%, var(--color-terracotta) 55%, #a84a24 100%);
+  }
+
+  .home-hero__bg {
+    display: none;
+  }
+
+  .home-hero__mark {
+    width: 150px;
+    margin-bottom: var(--space-lg);
+  }
+
+  .home-hero__plaque {
+    display: block;
+    width: min(30vw, 460px);
+    margin-bottom: var(--space-lg);
+    box-shadow: 0 30px 60px rgba(20, 10, 5, 0.3);
+  }
+
+  .home-hero__names {
+    font-size: 1.7rem;
+  }
+
+  .home-hero__date {
+    font-size: 0.85rem;
+    letter-spacing: 0.22em;
+  }
+
+  .home-hero__cta {
+    padding-top: var(--space-2xl);
+  }
+
+  .home-hero__cta .btn {
+    padding: 1.15rem 2.6rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.16em;
+  }
+
+  /* ---- Page hero: stacked pattern -> editorial two-column ---- */
+  .page-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    align-items: start;
+    gap: var(--space-2xl);
+    max-width: var(--width-full);
+    margin: 0 auto;
+    padding: var(--space-2xl) var(--page-gutter-desktop) 0;
+  }
+
+  .page-hero__image {
+    aspect-ratio: 3 / 4;
+    max-height: 700px;
+  }
+
+  .page-hero--wide .page-hero__image {
+    aspect-ratio: 4 / 3;
+    max-height: 560px;
+  }
+
+  .page-hero__body {
+    padding: var(--space-lg) 0 0;
+    align-self: center;
+  }
+
+  .page-hero .display-word {
+    margin-top: var(--space-xl);
+  }
+
+  /* ---- Page hero: overlap-card pattern (Itinerary, Attire) ---- */
+  .page-hero--overlap {
+    display: block;
+    position: relative;
+    max-width: var(--width-full);
+    margin: 0 auto;
+    padding: var(--space-2xl) var(--page-gutter-desktop) var(--space-xl);
+  }
+
+  .page-hero--overlap .page-hero__image {
+    width: 60%;
+    aspect-ratio: 4 / 5;
+    max-height: 680px;
+  }
+
+  .page-hero--overlap .page-hero__card {
+    position: absolute;
+    z-index: 2;
+    right: var(--page-gutter-desktop);
+    bottom: var(--space-xl);
+    width: 42%;
+    max-width: 30rem;
+    margin: 0;
+    padding: var(--space-xl) var(--space-xl) var(--space-2xl);
+    box-shadow: 0 30px 70px rgba(24, 14, 8, 0.14);
+  }
+
+  .page-hero--overlap .page-hero__tile {
+    right: calc(var(--page-gutter-desktop) + 3rem);
+    bottom: calc(var(--space-xl) - 3.5rem);
+    width: 190px;
+  }
+
+  .page-hero--overlap .page-hero__spacer {
+    height: var(--space-xl);
+  }
+
+  /* ---- Itinerary list ---- */
+  .entry-list {
+    max-width: var(--width-content);
+    margin: 0 auto;
+    gap: 0;
+  }
+
+  .entry {
+    padding: var(--space-lg) 0;
+  }
+
+  .entry + .entry {
+    border-top: 1px solid var(--color-line-soft);
+  }
+
+  .entry__meta {
+    font-size: 1.1rem;
+  }
+
+  .entry__row {
+    gap: var(--space-lg);
+  }
+
+  .entry__title {
+    font-size: 1.4rem;
+    line-height: 1.5;
+  }
+
+  .entry__tag {
+    font-size: 1.15rem;
+  }
+
+  /* ---- Stay & Travel: accommodation cards become image | text rows ----
+     Absolute positioning (not grid row-spanning) for the image: a
+     spanning grid item forces intermediate text rows to inflate to its
+     height, which would break the natural, compact stacking of heading /
+     contact / button. This also keeps mobile's DOM order (name, image,
+     contact, button) untouched. */
+  .stay-card:has(.stay-card__image) {
+    position: relative;
+    max-width: var(--width-editorial);
+    margin: 0 auto;
+    min-height: 22rem;
+    padding-right: 52%;
+  }
+
+  .stay-card:has(.stay-card__image) .stay-card__image {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    width: 46%;
+    aspect-ratio: 4 / 3;
+    margin-bottom: 0;
+  }
+
+  .stay-card:has(.stay-card__image):nth-of-type(even) {
+    padding-right: 0;
+    padding-left: 52%;
+  }
+
+  .stay-card:has(.stay-card__image):nth-of-type(even) .stay-card__image {
+    right: auto;
+    left: 0;
+  }
+
+  #accommodation .stay-card:not(:has(.stay-card__image)) {
+    max-width: var(--width-copy);
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+  }
+
+  #accommodation .stay-card + .stay-card {
+    margin-top: var(--space-xl);
+  }
+
+  .stay-subsection {
+    max-width: var(--width-editorial);
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: var(--space-xl);
+  }
+
+  .stay-subsection:has(.stay-subsection__image) {
+    position: relative;
+    min-height: 26rem;
+    padding-left: 48%;
+  }
+
+  .stay-subsection:has(.stay-subsection__image) .stay-subsection__image {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 42%;
+    margin-bottom: 0;
+    aspect-ratio: 3 / 4;
+  }
+
+  #flights.stay-subsection:has(.stay-subsection__image) {
+    padding-left: 0;
+    padding-right: 48%;
+  }
+
+  #flights.stay-subsection:has(.stay-subsection__image) .stay-subsection__image {
+    left: auto;
+    right: 0;
+  }
+
+  .stay-subsection:not(:has(.stay-subsection__image)) {
+    max-width: var(--width-copy);
+  }
+
+  #accommodation-sps {
+    max-width: var(--width-editorial);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .stay-card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--space-xl);
+    align-items: start;
+  }
+
+  .stay-card-grid .stay-card {
+    padding-top: 0;
+  }
+
+  /* ---- Explore: restaurants & things to do ---- */
+  #restaurants,
+  #things-to-do {
+    max-width: var(--width-editorial);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .guide-item:has(.guide-item__image) {
+    position: relative;
+    min-height: 22rem;
+    padding-left: 48%;
+  }
+
+  .guide-item:has(.guide-item__image) .guide-item__image {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 42%;
+    aspect-ratio: 4 / 3;
+    margin-bottom: 0;
+  }
+
+  .guide-item:has(.guide-item__image):nth-of-type(even) {
+    padding-left: 0;
+    padding-right: 48%;
+  }
+
+  .guide-item:has(.guide-item__image):nth-of-type(even) .guide-item__image {
+    left: auto;
+    right: 0;
+  }
+
+  .guide-item:not(:has(.guide-item__image)) {
+    max-width: var(--width-copy);
+  }
+
+  .display-word {
+    font-size: clamp(6rem, 13vw, 12rem);
+    text-align: center;
+    margin-top: var(--space-2xl);
+  }
+
+  .page-hero:has(.display-word) {
+    padding-bottom: 0;
+  }
+
+  /* ---- Attire: dress-code blocks become text | image-pair rows ----
+     Uses absolute positioning (not grid row-spanning) for the image pair:
+     a spanning grid item forces intermediate text rows to inflate to its
+     height, which breaks the natural, compact stacking of the heading /
+     meta / dress-code note. Absolute positioning sidesteps that and keeps
+     the mobile DOM order (heading, meta, images, note) untouched. */
+  .dress-block {
+    position: relative;
+    max-width: var(--width-editorial);
+    margin-left: auto;
+    margin-right: auto;
+    min-height: 30rem;
+    padding-right: 46%;
+  }
+
+  .dress-block > .pair-grid {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    width: 42%;
+    margin-bottom: 0;
+  }
+
+  .dress-block:nth-of-type(even) {
+    padding-right: 0;
+    padding-left: 46%;
+  }
+
+  .dress-block:nth-of-type(even) > .pair-grid {
+    right: auto;
+    left: 0;
+  }
+
+  .pair-grid .figure {
+    aspect-ratio: 3 / 4;
+  }
+
+  /* ---- Services: quiet, centered, restrained ---- */
+  #hair-makeup,
+  #shoeshine {
+    max-width: var(--width-copy);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* ---- RSVP: quiet, generous, focused ---- */
+  .rsvp-hero {
+    padding: var(--space-2xl) var(--page-gutter-desktop) var(--space-lg);
+  }
+
+  .rsvp-hero__mark {
+    width: 110px;
+  }
+
+  .rsvp-panel {
+    padding: var(--space-2xl) 0;
+  }
+
+  .rsvp-panel__inner {
+    max-width: 68rem;
+  }
+
+  .rsvp-embed {
+    max-width: 62rem;
+    margin: 0 auto;
+    min-height: 1000px;
+  }
+
+  /* ---- FAQ: quiet, centered column ---- */
+  .faq-list {
+    max-width: var(--width-content);
+    margin: 0 auto;
+  }
+
+  .faq-item__q {
+    font-size: 1.3rem;
+  }
+}

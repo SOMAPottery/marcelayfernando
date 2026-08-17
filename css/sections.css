@@ -1,0 +1,277 @@
+/* ==========================================================================
+   SECTIONS — MOBILE BASE
+   Page-specific compositions (hero patterns, image pairs, RSVP panel…)
+   as they appear on the approved mobile site.
+   ========================================================================== */
+
+/* ---- Home hero ---- */
+.home-hero {
+  position: relative;
+  min-height: 100svh;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: var(--space-2xl) var(--page-gutter-mobile) var(--space-xl);
+  text-align: center;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.home-hero__bg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+
+.home-hero__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+}
+
+.home-hero__mark {
+  width: 132px;
+  margin-bottom: var(--space-lg);
+}
+
+.home-hero__mark img {
+  width: 100%;
+  height: auto;
+  opacity: 0.95;
+}
+
+.home-hero__plaque {
+  display: none;
+}
+
+.home-hero__spacer {
+  flex: 1;
+  min-height: var(--space-md);
+}
+
+.home-hero__names {
+  font-family: var(--font-secondary);
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--color-ivory);
+  margin-bottom: var(--space-3xs);
+}
+
+.home-hero__date {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--color-ivory);
+  opacity: 0.9;
+}
+
+.home-hero__cta {
+  margin-top: auto;
+  padding-top: var(--space-2xl);
+}
+
+/* ---- Page hero: stacked pattern (Stay&Travel, Explore, Services, FAQ) ---- */
+.page-hero {
+  padding-top: var(--space-lg);
+}
+
+.page-hero__image {
+  aspect-ratio: 4 / 5;
+}
+
+.page-hero--wide .page-hero__image {
+  aspect-ratio: 4 / 3;
+}
+
+.page-hero__body {
+  padding: var(--space-lg) var(--page-gutter-mobile) 0;
+}
+
+/* ---- Page hero: overlap-card pattern (Itinerary, Attire) ---- */
+.page-hero--overlap {
+  position: relative;
+  padding-top: 0;
+}
+
+.page-hero--overlap .page-hero__image {
+  aspect-ratio: 3 / 4;
+}
+
+.page-hero--overlap .page-hero__card {
+  position: relative;
+  z-index: 2;
+  margin-right: 14%;
+  margin-top: -34vw;
+  background: var(--color-ivory);
+  padding: var(--space-lg) var(--page-gutter-mobile) var(--space-2xl);
+}
+
+.page-hero--overlap .page-hero__tile {
+  position: absolute;
+  right: var(--page-gutter-mobile);
+  bottom: -14vw;
+  width: 32%;
+  aspect-ratio: 1 / 1;
+  z-index: 3;
+  box-shadow: 0 12px 30px rgba(20, 10, 5, 0.22);
+}
+
+.page-hero--overlap .page-hero__tile img {
+  object-position: 78% 82%;
+}
+
+.page-hero--overlap .page-hero__spacer {
+  height: 14vw;
+}
+
+/* ---- Guide items (Explore: restaurants & things to do) ---- */
+.guide-item {
+  padding-top: var(--space-lg);
+  padding-bottom: var(--space-lg);
+}
+
+.guide-item + .guide-item {
+  border-top: 1px solid var(--color-line-soft);
+}
+
+.guide-item__image {
+  aspect-ratio: 4 / 3;
+  margin-bottom: var(--space-sm);
+}
+
+.guide-item__name {
+  margin-bottom: var(--space-2xs);
+}
+
+.guide-item .btn {
+  margin-top: var(--space-sm);
+}
+
+.guide-group__heading {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  margin-bottom: var(--space-md);
+}
+
+/* ---- Attire: dress-code blocks ---- */
+.dress-block {
+  padding-top: var(--space-lg);
+  padding-bottom: var(--space-lg);
+}
+
+.dress-block + .dress-block {
+  border-top: 1px solid var(--color-line-soft);
+}
+
+.dress-block__meta {
+  color: var(--color-chocolate-soft);
+  font-size: 0.85rem;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  margin-top: var(--space-3xs);
+  margin-bottom: var(--space-md);
+}
+
+.pair-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-2xs);
+  margin-bottom: var(--space-md);
+}
+
+.pair-grid .figure {
+  aspect-ratio: 3 / 4;
+}
+
+.dress-code-note {
+  margin-top: var(--space-md);
+}
+
+.dress-code-note__label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: var(--space-3xs);
+}
+
+/* ---- Accommodation cards (Stay & Travel) ---- */
+.stay-card {
+  padding-top: var(--space-lg);
+}
+
+.stay-card__name {
+  margin-bottom: var(--space-sm);
+}
+
+.stay-card__image {
+  aspect-ratio: 4 / 3;
+  margin-bottom: var(--space-sm);
+}
+
+.stay-card__contact {
+  margin-bottom: var(--space-xs);
+}
+
+.stay-subsection {
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--color-line);
+  margin-top: var(--space-lg);
+}
+
+.stay-subsection__image {
+  aspect-ratio: 4 / 3;
+  margin-bottom: var(--space-md);
+}
+
+.stay-note {
+  margin-top: var(--space-md);
+}
+
+.stay-note__label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: var(--space-3xs);
+}
+
+/* ---- RSVP page ---- */
+.rsvp-page {
+  background: var(--color-cream);
+}
+
+.rsvp-hero {
+  text-align: center;
+  padding: var(--space-xl) var(--page-gutter-mobile) var(--space-lg);
+}
+
+.rsvp-hero__mark {
+  width: 84px;
+  margin: 0 auto var(--space-md);
+}
+
+.rsvp-hero__mark img {
+  width: 100%;
+  height: auto;
+}
+
+.rsvp-hero__intro {
+  margin-top: var(--space-sm);
+}
+
+.rsvp-panel {
+  background: var(--color-ivory);
+  border-top: 1px solid var(--color-line);
+  padding: var(--space-lg) 0;
+}
+
+.rsvp-embed {
+  width: 100%;
+  min-height: 900px;
+  border: 0;
+}
+
+/* ---- FAQ hero uses page-hero--stacked pattern; Q&A list uses .faq-list ---- */

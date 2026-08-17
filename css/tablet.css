@@ -1,0 +1,120 @@
+/* ==========================================================================
+   TABLET  (768px – 1023px)
+   Graceful transition between the approved mobile layout and the desktop
+   redesign: wider gutters, a bigger type scale and landscape image
+   proportions — but still single-column. Full editorial compositions start
+   at desktop.css (1024px).
+   ========================================================================== */
+
+@media (min-width: 768px) {
+  .container {
+    padding-left: var(--page-gutter-tablet);
+    padding-right: var(--page-gutter-tablet);
+  }
+
+  .site-header,
+  .home-hero,
+  .rsvp-hero,
+  .page-hero__body,
+  .site-footer {
+    padding-left: var(--page-gutter-tablet);
+    padding-right: var(--page-gutter-tablet);
+  }
+
+  .site-header__mark img {
+    height: 40px;
+  }
+
+  .site-nav {
+    width: min(50vw, 380px);
+  }
+
+  /* ---- Typography ---- */
+  .section-title {
+    font-size: clamp(2.6rem, 6vw, 3.4rem);
+  }
+
+  .eyebrow {
+    font-size: 1.4rem;
+  }
+
+  .body-text {
+    font-size: 1.02rem;
+  }
+
+  .measure-copy {
+    max-width: 38rem;
+  }
+
+  /* ---- Page hero patterns ---- */
+  .page-hero__image {
+    aspect-ratio: 16 / 9;
+  }
+
+  .page-hero--overlap .page-hero__image {
+    aspect-ratio: 16 / 10;
+  }
+
+  .page-hero--overlap .page-hero__card {
+    padding-left: var(--page-gutter-tablet);
+    padding-right: var(--page-gutter-tablet);
+    margin-right: 22%;
+    margin-top: -16vw;
+  }
+
+  .page-hero--overlap .page-hero__tile {
+    width: 26%;
+    bottom: -8vw;
+  }
+
+  .page-hero--overlap .page-hero__spacer {
+    height: 8vw;
+  }
+
+  .home-hero__mark {
+    width: 150px;
+  }
+
+  .home-hero__names {
+    font-size: 1.3rem;
+  }
+
+  /* ---- Images: landscape proportions read better at tablet width ---- */
+  .guide-item__image,
+  .stay-card__image,
+  .stay-subsection__image {
+    aspect-ratio: 16 / 9;
+  }
+
+  .pair-grid {
+    gap: var(--space-sm);
+  }
+
+  .display-word {
+    font-size: 16vw;
+  }
+
+  /* ---- RSVP ---- */
+  .rsvp-panel {
+    padding: var(--space-xl) var(--page-gutter-tablet);
+  }
+
+  .rsvp-embed {
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  .rsvp-hero__mark {
+    width: 96px;
+  }
+
+  /* ---- Entries / lists get a little more breathing room ---- */
+  .entry-list {
+    gap: var(--space-xl);
+  }
+
+  .faq-item {
+    padding-top: var(--space-lg);
+    padding-bottom: var(--space-lg);
+  }
+}

@@ -1,0 +1,76 @@
+/* ==========================================================================
+   DESIGN TOKENS
+   Marcela & Fernando — Copán Ruinas, Honduras
+   Single source of truth for color, type, spacing and layout widths.
+   Edit values here to restyle the whole site consistently.
+
+   Breakpoints (referenced throughout the CSS, not expressible as vars):
+     Mobile        <= 767px   (base.css / components.css / sections.css)
+     Tablet        768–1023px (tablet.css)
+     Desktop       >= 1024px  (desktop.css)
+     Large Desktop >= 1440px  (large-desktop.css)
+   ========================================================================== */
+
+:root {
+  /* ---- Color: warm Old-World Latin palette ---- */
+  --color-cream: #f6efe1;          /* page background */
+  --color-ivory: #fbf7ee;          /* card / panel background, slightly lighter */
+  --color-paper: #f1e9da;          /* alternate section background (textured paper feel) */
+  --color-chocolate: #382a1e;      /* primary text */
+  --color-chocolate-soft: #5a4a3a; /* secondary / muted text */
+  --color-burgundy: #5c1b24;       /* primary accent: buttons, eyebrows, links */
+  --color-burgundy-dark: #430f17;  /* accent hover/active */
+  --color-terracotta: #c1592c;     /* hero warmth, rare large-surface accent */
+  --color-olive: #6b6b45;          /* quiet secondary accent */
+  --color-sand: #e3d5b8;           /* borders, subtle fills */
+  --color-line: rgba(56, 42, 30, 0.16);   /* hairline dividers */
+  --color-line-soft: rgba(56, 42, 30, 0.09);
+  --color-overlay-scrim: rgba(30, 18, 12, 0.28);
+
+  /* ---- Type ---- */
+  --font-display: "EB Garamond", "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --font-secondary: "Cormorant Garamond", "EB Garamond", Georgia, serif;
+  --font-body: "Jost", "Segoe UI", Helvetica, Arial, sans-serif;
+
+  --tracking-wide: 0.04em;
+  --tracking-wider: 0.09em;
+  --tracking-widest: 0.16em;
+
+  /* ---- Spacing scale (mobile-first; desktop.css / large-desktop.css scale these up per-context) ---- */
+  --space-3xs: 0.25rem;   /* 4px */
+  --space-2xs: 0.5rem;    /* 8px */
+  --space-xs: 0.75rem;    /* 12px */
+  --space-sm: 1.25rem;    /* 20px */
+  --space-md: 2rem;       /* 32px */
+  --space-lg: 3rem;       /* 48px */
+  --space-xl: 4.5rem;     /* 72px */
+  --space-2xl: 6rem;      /* 96px */
+
+  /* ---- Section rhythm ---- */
+  --section-space-mobile: 3.5rem;
+  --section-space-desktop: 8rem;
+  --section-space-large: 9.5rem;
+
+  /* space reserved after a section's final paragraph, before its divider */
+  --space-before-divider: 2.75rem;
+  /* space after a divider, before the next section's eyebrow/title */
+  --space-after-divider: 3.5rem;
+
+  /* ---- Layout widths ---- */
+  --width-copy: 34rem;        /* narrow reading column, ~ optimal measure */
+  --width-content: 46rem;     /* standard content column */
+  --width-editorial: 72rem;   /* wide editorial column, image + text compositions */
+  --width-full: 96rem;        /* outer page max-width on very large screens */
+
+  --page-gutter-mobile: 1.25rem;
+  --page-gutter-tablet: 3rem;
+  --page-gutter-desktop: 5vw;
+  --page-gutter-large: 7vw;
+
+  /* ---- Misc ---- */
+  --radius-sm: 2px;
+  --header-height-mobile: 60px;
+  --header-height-desktop: 92px;
+  --transition-base: 220ms ease;
+  --transition-slow: 420ms cubic-bezier(0.22, 1, 0.36, 1);
+}
