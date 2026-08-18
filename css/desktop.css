@@ -113,21 +113,23 @@
     padding: var(--space-xl) var(--page-gutter-desktop) var(--space-2xl);
   }
 
-  /* ---- Home hero: quiet, centered, generously proportioned ----
-     The mobile hero uses one full-bleed photo with the plaque baked in —
-     faithful to the approved design at a tall, narrow aspect ratio. At
-     wide desktop ratios that same cover-crop zooms in so far the plaque
-     collides with the overlaid text, so desktop instead pairs a warm
-     solid backdrop (sampled from the same wall) with the plaque presented
-     as its own contained, tightly-cropped image. Same artwork, same
-     identity — just composed so it never fights for space. */
+  /* ---- Home hero: the full photo again, contained (not cropped) ----
+     Cover-fit on a wide desktop box zoomed the photo so far in that the
+     plaque collided with the overlaid text (see git history). Showing
+     the whole photo with object-fit: contain avoids that entirely, with
+     a matching solid backdrop filling the letterboxed sides. */
   .home-hero {
     padding: var(--space-2xl) var(--page-gutter-desktop) var(--space-2xl);
-    background: radial-gradient(120% 100% at 50% 8%, #cf6636 0%, var(--color-terracotta) 55%, #a84a24 100%);
+    background: #ba5b29;
   }
 
   .home-hero__bg {
-    display: none;
+    display: block;
+  }
+
+  .home-hero__bg img {
+    object-fit: contain;
+    object-position: center center;
   }
 
   .home-hero__mark {
@@ -136,29 +138,129 @@
   }
 
   .home-hero__plaque {
-    display: block;
-    width: min(30vw, 460px);
-    margin-bottom: var(--space-lg);
-    box-shadow: 0 30px 60px rgba(20, 10, 5, 0.3);
+    display: none;
   }
 
   .home-hero__names {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-style: italic;
     font-size: 1.7rem;
+    line-height: 1.2;
+    color: #e8e2ce;
   }
 
   .home-hero__date {
-    font-size: 0.85rem;
-    letter-spacing: 0.22em;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-style: normal;
+    font-size: 1.15rem;
+    line-height: 1.2;
+    letter-spacing: normal;
+    text-transform: none;
+    color: #e8e2ce;
+    opacity: 0.95;
   }
 
   .home-hero__cta {
     padding-top: var(--space-2xl);
   }
 
-  .home-hero__cta .btn {
-    padding: 1.15rem 2.6rem;
-    font-size: 0.8rem;
-    letter-spacing: 0.16em;
+  .home-hero__cta .btn--hero {
+    width: 150px;
+    height: 46px;
+    padding: 0;
+    background: #e8e2ce;
+    border: 1px solid var(--color-burgundy);
+    border-radius: 3px;
+    color: var(--color-burgundy);
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: normal;
+    text-transform: none;
+    backdrop-filter: none;
+    box-shadow: 0 4px 14px rgba(24, 14, 8, 0.16);
+  }
+
+  .home-hero__cta .btn--hero:hover,
+  .home-hero__cta .btn--hero:focus-visible {
+    background: #f0e6cc;
+    border-color: var(--color-burgundy);
+    color: var(--color-burgundy);
+  }
+
+  /* ---- Home header: transparent, RSVP + hamburger only (mobile-style panel) ---- */
+  .page-home .site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: transparent;
+    border-bottom: 0;
+    justify-content: flex-end;
+  }
+
+  .page-home.nav-open .site-header {
+    background: var(--color-ivory);
+    border-bottom: 1px solid var(--color-line-soft);
+  }
+
+  .page-home .site-footer {
+    display: none;
+  }
+
+  .page-home .site-header__mark {
+    display: none;
+  }
+
+  .page-home .site-header__nav-list {
+    display: none;
+  }
+
+  .page-home .site-header__nav {
+    gap: 0;
+  }
+
+  .page-home .site-header__rsvp {
+    background: #e8e2ce;
+    border: 1px solid transparent;
+    color: var(--color-burgundy);
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 700;
+    text-transform: none;
+    letter-spacing: normal;
+    padding: 0.7rem 1.5rem;
+    border-radius: 3px;
+  }
+
+  .page-home .site-header__rsvp:hover,
+  .page-home .site-header__rsvp:focus-visible {
+    background: #f0e6cc;
+    color: var(--color-burgundy);
+  }
+
+  .page-home .site-header__toggle {
+    display: flex;
+    margin-left: var(--space-md);
+  }
+
+  .page-home .site-header__toggle span {
+    background: #e8e2ce;
+  }
+
+  .page-home.nav-open .site-header__toggle span {
+    background: var(--color-chocolate);
+  }
+
+  .page-home .site-nav-overlay {
+    display: block;
+  }
+
+  .page-home .site-nav {
+    display: flex;
   }
 
   /* ---- Page hero: stacked pattern -> editorial two-column ---- */
