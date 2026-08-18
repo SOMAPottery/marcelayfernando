@@ -61,7 +61,7 @@
 }
 
 .home-hero__date {
-  font-family: var(--font-body);
+  font-family: var(--font-secondary);
   font-size: 0.8rem;
   letter-spacing: var(--tracking-widest);
   text-transform: uppercase;
@@ -275,3 +275,66 @@
 }
 
 /* ---- FAQ hero uses page-hero--stacked pattern; Q&A list uses .faq-list ---- */
+
+/* ---- Home hero refinements: mobile only (<= 767px) ----
+   Requested against the approved mobile design: smaller/higher monogram,
+   tighter vertical rhythm so the subtitle/date and RSVP button sit higher,
+   a transparent floating header (no cream bar) on the homepage only, and a
+   cream RSVP button matching the plaque tone. Scoped to mobile so it has
+   no effect on tablet/desktop. */
+@media (max-width: 767px) {
+  .page-home .site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: transparent;
+    border-bottom: 0;
+    justify-content: flex-end;
+  }
+
+  .page-home.nav-open .site-header {
+    background: var(--color-ivory);
+    border-bottom: 1px solid var(--color-line-soft);
+  }
+
+  .page-home .site-header__mark {
+    display: none;
+  }
+
+  .page-home .site-header__toggle span {
+    width: 20px;
+    background: var(--color-ivory);
+  }
+
+  .page-home .site-header__toggle span:nth-child(2) {
+    width: 14px;
+  }
+
+  .page-home.nav-open .site-header__toggle span {
+    background: var(--color-chocolate);
+  }
+
+  .page-home .home-hero {
+    padding-top: var(--space-xl);
+    padding-bottom: 8rem;
+  }
+
+  .page-home .home-hero__mark {
+    width: 104px;
+    margin-bottom: var(--space-md);
+  }
+
+  .page-home .btn--hero {
+    background: var(--color-ivory);
+    border-color: var(--color-ivory);
+    color: var(--color-burgundy);
+  }
+
+  .page-home .btn--hero:hover,
+  .page-home .btn--hero:focus-visible {
+    background: var(--color-burgundy);
+    border-color: var(--color-burgundy);
+    color: var(--color-ivory);
+  }
+}
