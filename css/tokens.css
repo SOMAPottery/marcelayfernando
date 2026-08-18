@@ -13,8 +13,8 @@
 
 :root {
   /* ---- Color: warm Old-World Latin palette ---- */
-  --color-cream: #f6efe1;          /* page background */
-  --color-ivory: #fbf7ee;          /* card / panel background, slightly lighter */
+  --color-cream: #f4eddd;          /* page background */
+  --color-ivory: #f4eddd;          /* card / panel background */
   --color-paper: #f1e9da;          /* alternate section background (textured paper feel) */
   --color-chocolate: #382a1e;      /* primary text */
   --color-chocolate-soft: #5a4a3a; /* secondary / muted text */

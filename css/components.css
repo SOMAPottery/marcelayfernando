@@ -102,6 +102,7 @@
 }
 
 .site-nav__mark {
+  margin-top: var(--space-sm);
   margin-bottom: var(--space-lg);
 }
 
@@ -141,15 +142,6 @@
 .site-nav__list a[aria-current="page"] {
   color: var(--color-burgundy);
   font-weight: 600;
-}
-
-.site-nav__list li.is-rsvp a {
-  color: var(--color-burgundy);
-  font-family: var(--font-body);
-  font-weight: 600;
-  letter-spacing: var(--tracking-wide);
-  text-transform: uppercase;
-  font-size: 0.85rem;
 }
 
 body.nav-open {
@@ -324,6 +316,13 @@ body.nav-open {
   text-align: center;
   color: var(--color-chocolate-soft);
   font-size: 0.85rem;
+}
+
+/* Removed on mobile per feedback; still shown from tablet up. */
+@media (max-width: 767px) {
+  .site-footer {
+    display: none;
+  }
 }
 
 .site-footer__mark img {
