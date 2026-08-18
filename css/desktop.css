@@ -113,11 +113,11 @@
     padding: var(--space-xl) var(--page-gutter-desktop) var(--space-2xl);
   }
 
-  /* ---- Home hero: the full photo again, contained (not cropped) ----
-     Cover-fit on a wide desktop box zoomed the photo so far in that the
-     plaque collided with the overlaid text (see git history). Showing
-     the whole photo with object-fit: contain avoids that entirely, with
-     a matching solid backdrop filling the letterboxed sides. */
+  /* ---- Home hero: purpose-shot wide background (hero-wall-plaque-desktop) ----
+     Framed natively for landscape desktop viewports (1536x1024, plaque
+     centered with generous margin), swapped in via <picture> so mobile
+     keeps its own tall crop. Plain object-fit: cover — no collision risk
+     since the source is already wide, unlike the portrait mobile photo. */
   .home-hero {
     padding: var(--space-2xl) var(--page-gutter-desktop) var(--space-2xl);
     background: #ba5b29;
@@ -128,7 +128,7 @@
   }
 
   .home-hero__bg img {
-    object-fit: contain;
+    object-fit: cover;
     object-position: center center;
   }
 
