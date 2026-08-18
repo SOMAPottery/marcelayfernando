@@ -366,3 +366,92 @@
     color: var(--color-burgundy);
   }
 }
+
+/* ---- Itinerary refinements: mobile only (<= 767px) ----
+   The overlap-hero pattern had grown too tall and too spacious against
+   the approved reference: shorter photo, the card overlapping much
+   higher and inset from both edges (not near full-width), a smaller
+   title, the inset tile pulled up near the title instead of floating
+   below the card, and a tighter, lighter event list so all three
+   weekend events read within the first screen. Scoped to the itinerary
+   page and to mobile only. */
+@media (max-width: 767px) {
+  .page-itinerary .site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: transparent;
+    border-bottom: 0;
+    justify-content: flex-end;
+  }
+
+  .page-itinerary.nav-open .site-header {
+    background: var(--color-ivory);
+    border-bottom: 1px solid var(--color-line-soft);
+  }
+
+  .page-itinerary .site-header__mark {
+    display: none;
+  }
+
+  .page-itinerary .site-header__toggle span {
+    width: 20px;
+    background: var(--color-ivory);
+  }
+
+  .page-itinerary .site-header__toggle span:nth-child(2) {
+    width: 14px;
+  }
+
+  .page-itinerary.nav-open .site-header__toggle span {
+    background: var(--color-chocolate);
+  }
+
+  .page-itinerary .page-hero--overlap .page-hero__image {
+    aspect-ratio: 1 / 1;
+  }
+
+  .page-itinerary .page-hero--overlap .page-hero__card {
+    margin-top: -50vw;
+    margin-left: 7%;
+    margin-right: 20%;
+    padding: var(--space-md) var(--page-gutter-mobile) var(--space-md);
+  }
+
+  .page-itinerary .section-title {
+    font-size: 1.9rem;
+  }
+
+  .page-itinerary .page-hero--overlap .page-hero__tile {
+    top: 305px;
+    bottom: auto;
+    width: 28%;
+  }
+
+  .page-itinerary .page-hero--overlap .page-hero__spacer {
+    height: var(--space-md);
+  }
+
+  .page-itinerary .page-section--tight {
+    padding-top: var(--space-md);
+    padding-bottom: var(--space-md);
+  }
+
+  .page-itinerary .entry-list {
+    gap: var(--space-md);
+  }
+
+  .page-itinerary .entry__meta {
+    font-size: 0.85rem;
+  }
+
+  .page-itinerary .entry__title {
+    font-size: 0.95rem;
+    font-weight: 400;
+  }
+
+  .page-itinerary .entry__tag {
+    font-size: 0.9rem;
+  }
+}
